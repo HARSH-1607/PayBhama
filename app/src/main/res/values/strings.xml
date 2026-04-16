@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">PayBhama</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email_hint">Email Address</string>
+    <string name="password_hint">Password</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="send_money">Send Money</string>
+    <string name="transaction_history">History</string>
+    <string name="amount">Amount (₹)</string>
+    <string name="receiver_email">Receiver Email</string>
+    <string name="send">Send ₹</string>
+    <string name="balance_label">Your Current Balance:</string>
+    
+    <!-- Empowerment Branding -->
+    <string name="welcome_empowerment">Empowering the women of Rajasthan</string>
+    <string name="tagline">Safe, Secure &amp; Simple Digital Payments</string>
+    <string name="history_title">Bahi-Khata (Transactions)</string>
+</resources>

@@ -1,0 +1,19 @@
+<resources>
+    <color name="primary_blue">#0047AB</color> <!-- Jodhpur Indigo -->
+    <color name="primary_purple">#663399</color>
+    <color name="rajasthan_saffron">#FF9933</color>
+    <color name="jaipur_pink">#F4C2C2</color>
+    
+    <color name="bg_light">#FDF6F0</color> <!-- Warm Sand Background -->
+    <color name="white">#FFFFFF</color>
+    
+    <!-- Category Colors -->
+    <color name="coral_exp">#FF8D8D</color>
+    <color name="teal_exp">#4CD0C2</color>
+    <color name="mustard_exp">#FFC56D</color>
+    <color name="magenta_exp">#FF60B2</color>
+    
+    <color name="text_dark">#1A1D1F</color>
+    <color name="text_grey">#9A9FA5</color>
+    <color name="black">#FF000000</color>
+</resources>

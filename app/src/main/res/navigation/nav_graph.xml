@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.paybhama.app.ui.dashboard.DashboardFragment"
+        android:label="Dashboard" >
+        <action
+            android:id="@+id/action_dashboard_to_sendMoney"
+            app:destination="@id/sendMoneyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_dashboard_to_history"
+            app:destination="@id/historyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_dashboard_to_profile"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    
+    <fragment
+        android:id="@+id/sendMoneyFragment"
+        android:name="com.paybhama.app.ui.transfer.SendMoneyFragment"
+        android:label="Send Money" />
+        
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.paybhama.app.ui.history.TransactionHistoryFragment"
+        android:label="History" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.paybhama.app.ui.profile.ProfileFragment"
+        android:label="Profile" />
+</navigation>

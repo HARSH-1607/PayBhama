@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="12dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivTransactionType"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="#EFF1FF"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/CircleImage"
+        app:srcCompat="@android:drawable/ic_menu_send" />
+
+    <TextView
+        android:id="@+id/tvTransactionInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/text_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvTransactionAmount"
+        app:layout_constraintStart_toEndOf="@+id/ivTransactionType"
+        app:layout_constraintTop_toTopOf="@+id/ivTransactionType"
+        tools:text="Shopping" />
+
+    <TextView
+        android:id="@+id/tvTransactionDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/text_grey"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTransactionType"
+        app:layout_constraintEnd_toEndOf="@+id/tvTransactionInfo"
+        app:layout_constraintStart_toStartOf="@+id/tvTransactionInfo"
+        app:layout_constraintTop_toBottomOf="@+id/tvTransactionInfo"
+        tools:text="15 March 2021, 8:30 pm" />
+
+    <TextView
+        android:id="@+id/tvTransactionAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="-$120" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

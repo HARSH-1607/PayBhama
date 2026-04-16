@@ -1,0 +1,23 @@
+# Built artifacts
+bin/
+gen/
+out/
+build/
+.gradle/
+*.apk
+*.aar
+*.ap_
+
+# IDE - Android Studio
+.idea/
+*.iml
+.navigation/
+captures/
+.DS_Store
+
+# Local configuration
+local.properties
+
+# Secrets
+# google-services.json (Optionally ignore if you want users to provide their own)
+# google-services.json
