@@ -41,12 +41,19 @@ By blending high-end fintech design with regional cultural values, PayBhama prov
 - Android Studio Iguana or newer.
 - A Firebase project with Firestore and Email/Password Auth enabled.
 
+### 🔑 Firebase Setup (Required)
+For security reasons, this repository does not include secret API keys. To run the app:
+1. Go to the [Firebase Console](https://console.firebase.google.com/).
+2. Create a new project and add an Android app with package name `com.paybhama.app`.
+3. Download the `google-services.json` file.
+4. Place the file in the **`app/`** directory of this project.
+
 ### Setup
 1. Clone the repository:
    ```bash
    git clone https://github.com/HARSH-1607/PayBhama.git
    ```
-2. Place your `google-services.json` in the `app/` directory.
+2. Place your `google-services.json` in the `app/` directory as described above.
 3. Build and run the project on your emulator or physical device.
 
 ---
