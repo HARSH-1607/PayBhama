@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_light">
+    android:background="@color/bg_dark">
 
     <!-- Curved Header -->
     <View
@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="-40dp"
+        app:cardBackgroundColor="@color/surface_dark"
         app:cardCornerRadius="32dp"
         app:cardElevation="12dp"
         app:layout_constraintTop_toBottomOf="@+id/header_bg">
@@ -48,12 +49,16 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/receiver_email"
                 android:layout_marginBottom="16dp"
+                android:textColorHint="@color/text_medium_emphasis"
+                app:hintTextColor="@color/electric_blue"
+                app:boxStrokeColor="@color/electric_blue"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etReceiverEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/text_high_emphasis"
                     android:inputType="textEmailAddress" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -63,13 +68,18 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/amount"
                 android:layout_marginBottom="32dp"
+                android:textColorHint="@color/text_medium_emphasis"
+                app:hintTextColor="@color/electric_blue"
+                app:boxStrokeColor="@color/electric_blue"
                 app:prefixText="₹ "
+                app:prefixTextColor="@color/accent_emerald"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etAmount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/text_high_emphasis"
                     android:inputType="numberDecimal" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -79,6 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="@string/send"
+                app:backgroundTint="@color/electric_blue"
                 app:cornerRadius="16dp"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"/>
@@ -102,15 +113,16 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@android:drawable/ic_lock_idle_lock"
-            app:tint="@color/text_grey" />
+            app:tint="@color/text_medium_emphasis" />
             
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Secure Rajasthan Network"
-            android:textColor="@color/text_grey"
+            android:textColor="@color/text_medium_emphasis"
             android:textSize="14sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

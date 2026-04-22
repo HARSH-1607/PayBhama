@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_light">
+    android:background="@color/bg_dark">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
@@ -26,7 +26,8 @@
             style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:text="Skip" />
+            android:text="Skip"
+            android:textColor="@color/text_medium_emphasis" />
 
         <View
             android:layout_width="0dp"
@@ -38,8 +39,10 @@
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:text="Next"
+            app:backgroundTint="@color/electric_blue"
             app:cornerRadius="16dp" />
 
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -12,13 +12,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="100dp">
 
             <!-- Premium Header -->
             <View
                 android:id="@+id/header_bg"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="350dp"
                 android:background="@drawable/header_gradient_bg"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,8 +28,8 @@
                 android:id="@+id/btnProfile"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="12dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@android:drawable/ic_menu_myplaces"
                 app:layout_constraintEnd_toStartOf="@+id/btnNotifications"
@@ -39,53 +40,67 @@
                 android:id="@+id/btnNotifications"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@android:drawable/ic_popup_reminder"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:tint="@color/white" />
 
-            <TextView
-                android:id="@+id/tvWelcome"
+            <!-- Left Content Guide -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="48dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.55" />
+
+            <!-- Welcome Section (Left) -->
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="16dp"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="32sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Namaste, Emma" />
 
             <TextView
                 android:id="@+id/tvTagline"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/welcome_empowerment"
                 android:textColor="@color/text_medium_emphasis"
-                android:textSize="12sp"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvWelcome"
                 app:layout_constraintStart_toStartOf="@+id/tvWelcome"
                 app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
 
-            <!-- Balance Card -->
+            <!-- Balance Card (Left) -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_balance"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
                 app:cardBackgroundColor="@color/surface_dark"
                 app:cardCornerRadius="24dp"
-                app:cardElevation="8dp"
+                app:cardElevation="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical"
+                app:layout_constraintStart_toStartOf="@+id/tvWelcome"
                 app:layout_constraintTop_toBottomOf="@+id/tvTagline">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="24dp">
+                    android:padding="32dp">
 
                     <TextView
                         android:id="@+id/tvLabelBalance"
@@ -93,7 +108,7 @@
                         android:layout_height="wrap_content"
                         android:text="Wallet Balance"
                         android:textColor="@color/text_medium_emphasis"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,9 +116,9 @@
                         android:id="@+id/tvBalance"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="12dp"
                         android:textColor="@color/accent_emerald"
-                        android:textSize="32sp"
+                        android:textSize="40sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvLabelBalance"
@@ -115,7 +130,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Add Money"
-                        android:textSize="12sp"
+                        android:paddingHorizontal="24dp"
                         app:layout_constraintBottom_toBottomOf="@+id/tvBalance"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/tvBalance" />
@@ -124,15 +139,18 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Quick Actions Grid -->
+            <!-- Quick Actions Grid (Right) -->
             <GridLayout
                 android:id="@+id/gridActions"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="24dp"
-                android:columnCount="3"
-                app:layout_constraintTop_toBottomOf="@+id/card_balance">
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="32dp"
+                android:columnCount="2"
+                app:layout_constraintBottom_toBottomOf="@+id/card_balance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guideline_vertical"
+                app:layout_constraintTop_toTopOf="@+id/tvWelcome">
 
                 <!-- Add Money -->
                 <LinearLayout
@@ -140,18 +158,18 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="24dp"
                     android:gravity="center"
                     android:orientation="vertical">
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
                         app:cardBackgroundColor="#2D303E"
-                        app:cardCornerRadius="16dp"
+                        app:cardCornerRadius="20dp"
                         app:cardElevation="0dp">
                         <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
                             android:layout_gravity="center"
                             android:src="@android:drawable/ic_input_add"
                             app:tint="@color/accent_emerald" />
@@ -162,7 +180,7 @@
                         android:layout_marginTop="8dp"
                         android:text="Add Money"
                         android:textColor="@color/text_medium_emphasis"
-                        android:textSize="12sp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <!-- Scan Pay -->
@@ -171,18 +189,18 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="24dp"
                     android:gravity="center"
                     android:orientation="vertical">
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
                         app:cardBackgroundColor="#2D303E"
-                        app:cardCornerRadius="16dp"
+                        app:cardCornerRadius="20dp"
                         app:cardElevation="0dp">
                         <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
                             android:layout_gravity="center"
                             android:src="@android:drawable/ic_menu_camera"
                             app:tint="@color/white" />
@@ -193,7 +211,7 @@
                         android:layout_marginTop="8dp"
                         android:text="Scan Pay"
                         android:textColor="@color/text_medium_emphasis"
-                        android:textSize="12sp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <!-- Send -->
@@ -202,18 +220,17 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
-                    android:layout_marginBottom="16dp"
                     android:gravity="center"
                     android:orientation="vertical">
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
                         app:cardBackgroundColor="#2D303E"
-                        app:cardCornerRadius="16dp"
+                        app:cardCornerRadius="20dp"
                         app:cardElevation="0dp">
                         <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
                             android:layout_gravity="center"
                             android:src="@android:drawable/ic_menu_send"
                             app:tint="@color/electric_blue" />
@@ -224,7 +241,7 @@
                         android:layout_marginTop="8dp"
                         android:text="Send"
                         android:textColor="@color/text_medium_emphasis"
-                        android:textSize="12sp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <!-- History -->
@@ -236,14 +253,14 @@
                     android:gravity="center"
                     android:orientation="vertical">
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
                         app:cardBackgroundColor="#2D303E"
-                        app:cardCornerRadius="16dp"
+                        app:cardCornerRadius="20dp"
                         app:cardElevation="0dp">
                         <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
                             android:layout_gravity="center"
                             android:src="@android:drawable/ic_menu_recent_history"
                             app:tint="@color/rajasthan_saffron" />
@@ -254,67 +271,7 @@
                         android:layout_marginTop="8dp"
                         android:text="History"
                         android:textColor="@color/text_medium_emphasis"
-                        android:textSize="12sp" />
-                </LinearLayout>
-
-                <!-- Bills -->
-                <LinearLayout
-                    android:id="@+id/btnBills"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        app:cardBackgroundColor="#2D303E"
-                        app:cardCornerRadius="16dp"
-                        app:cardElevation="0dp">
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_gravity="center"
-                            android:src="@android:drawable/ic_menu_agenda"
-                            app:tint="@color/jaipur_pink" />
-                    </com.google.android.material.card.MaterialCardView>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Bills"
-                        android:textColor="@color/text_medium_emphasis"
-                        android:textSize="12sp" />
-                </LinearLayout>
-
-                <!-- Rewards -->
-                <LinearLayout
-                    android:id="@+id/btnRewards"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        app:cardBackgroundColor="#2D303E"
-                        app:cardCornerRadius="16dp"
-                        app:cardElevation="0dp">
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_gravity="center"
-                            android:src="@android:drawable/btn_star_big_on"
-                            app:tint="@color/travel_yellow" />
-                    </com.google.android.material.card.MaterialCardView>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Rewards"
-                        android:textColor="@color/text_medium_emphasis"
-                        android:textSize="12sp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
             </GridLayout>
@@ -325,11 +282,11 @@
                 android:id="@+id/tvBillsHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="48dp"
                 android:text="Bill Payments &amp; Services"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/gridActions" />
@@ -338,100 +295,156 @@
                 android:id="@+id/card_bills"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="24dp"
                 app:cardBackgroundColor="@color/surface_dark"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="24dp"
                 app:layout_constraintTop_toBottomOf="@+id/tvBillsHeader">
 
                 <GridLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:columnCount="4">
+                    android:padding="24dp"
+                    android:columnCount="6">
 
+                    <!-- Mobile -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="8dp">
-                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_call" app:tint="@color/electric_blue" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Mobile" android:textColor="@color/text_medium_emphasis" android:textSize="10sp" />
+                        android:padding="12dp">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_call" app:tint="@color/electric_blue" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Mobile" android:textColor="@color/text_medium_emphasis" android:textSize="12sp" />
                     </LinearLayout>
 
+                    <!-- Electricity -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="8dp">
-                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_lock_power_off" app:tint="@color/rajasthan_saffron" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Electricity" android:textColor="@color/text_medium_emphasis" android:textSize="10sp" />
+                        android:padding="12dp">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_lock_power_off" app:tint="@color/rajasthan_saffron" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Electricity" android:textColor="@color/text_medium_emphasis" android:textSize="12sp" />
                     </LinearLayout>
 
+                    <!-- DTH -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="8dp">
-                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/presence_video_online" app:tint="@color/jaipur_pink" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="DTH" android:textColor="@color/text_medium_emphasis" android:textSize="10sp" />
+                        android:padding="12dp">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/presence_video_online" app:tint="@color/jaipur_pink" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="DTH" android:textColor="@color/text_medium_emphasis" android:textSize="12sp" />
                     </LinearLayout>
 
+                    <!-- Gas -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="8dp">
-                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_compass" app:tint="@color/accent_emerald" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Gas" android:textColor="@color/text_medium_emphasis" android:textSize="10sp" />
+                        android:padding="12dp">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_compass" app:tint="@color/accent_emerald" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Gas" android:textColor="@color/text_medium_emphasis" android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <!-- Broadband -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_share" app:tint="@color/electric_blue" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Internet" android:textColor="@color/text_medium_emphasis" android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <!-- Water -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_gallery" app:tint="@color/jaipur_pink" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Water" android:textColor="@color/text_medium_emphasis" android:textSize="12sp" />
                     </LinearLayout>
 
                 </GridLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Bottom Static Banner -->
+            <!-- Rewards Section (New for tablet) -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="100dp"
-                app:cardCornerRadius="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="120dp"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="32dp"
+                app:cardCornerRadius="24dp"
                 app:layout_constraintTop_toBottomOf="@+id/card_bills">
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/header_gradient_bg"
-                    android:alpha="0.3" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Special Offer: 5% Cashback on First Bill"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    android:alpha="0.2" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="32dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@android:drawable/btn_star_big_on"
+                        app:tint="@color/travel_yellow" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="24dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Exclusive Tablet Rewards"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Unlock premium cashback offers on your larger screen."
+                            android:textColor="@color/text_medium_emphasis"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Explore"
+                        style="@style/Widget.Material3.Button.TonalButton" />
+                </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Floating QR Scanner Button -->
+    <!-- Floating QR Scanner Button (Tablet: Sidebar or Corner) -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fabScanner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="32dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="32dp"
         android:text="Scan to Pay"
         android:textColor="@color/black"
         app:backgroundTint="@color/accent_emerald"
@@ -439,4 +452,3 @@
         app:iconTint="@color/black" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
-

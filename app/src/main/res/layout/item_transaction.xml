@@ -10,7 +10,7 @@
         android:id="@+id/ivTransactionType"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:background="#EFF1FF"
+        android:background="@color/surface_dark"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:textColor="@color/text_dark"
+        android:textColor="@color/text_high_emphasis"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/tvTransactionAmount"
@@ -36,7 +36,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:textColor="@color/text_grey"
+        android:textColor="@color/text_medium_emphasis"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/ivTransactionType"
         app:layout_constraintEnd_toEndOf="@+id/tvTransactionInfo"
@@ -48,12 +48,13 @@
         android:id="@+id/tvTransactionAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/text_dark"
+        android:textColor="@color/text_high_emphasis"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="-$120" />
+        tools:text="-₹ 120" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

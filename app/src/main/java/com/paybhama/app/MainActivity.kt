@@ -21,6 +21,10 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
         
+        // Setup Bottom Nav for Phones
         binding.bottomNav.setupWithNavController(navController)
+
+        // Setup Navigation Rail for Tablets (if present in the layout)
+        binding.navigationRail?.setupWithNavController(navController)
     }
 }

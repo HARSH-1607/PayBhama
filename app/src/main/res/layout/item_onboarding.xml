@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:textColor="@color/text_dark"
+        android:textColor="@color/text_high_emphasis"
         android:textSize="28sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:textColor="@color/text_grey"
+        android:textColor="@color/text_medium_emphasis"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,3 +44,4 @@
         tools:text="PayBhama is designed specifically to help the women of Rajasthan achieve financial independence." />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

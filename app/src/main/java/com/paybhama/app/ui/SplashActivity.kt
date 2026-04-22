@@ -19,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
 
         // Check persistent states
         val prefs = getSharedPreferences("paybhama_prefs", MODE_PRIVATE)
-        val onboardingCompleted = prefs.getBoolean("onboarding_completed", false)
+        val onboardingCompleted = prefs.getBoolean("onboarding_completed_v2", false)
         val currentUser = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser
 
         Handler(Looper.getMainLooper()).postDelayed({

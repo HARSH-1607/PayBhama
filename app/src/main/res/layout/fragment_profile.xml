@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_light">
+    android:background="@color/bg_dark">
 
     <!-- Curved Header -->
     <View
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="@color/text_dark"
+        android:textColor="@color/text_high_emphasis"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:textColor="@color/text_grey"
+        android:textColor="@color/text_medium_emphasis"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="32dp"
+        app:cardBackgroundColor="@color/surface_dark"
         app:cardCornerRadius="24dp"
         app:cardElevation="8dp"
         app:layout_constraintTop_toBottomOf="@+id/tvProfileEmail">
@@ -75,14 +76,30 @@
                 android:layout_height="60dp"
                 android:gravity="start|center_vertical"
                 android:text="Account Settings"
-                android:textColor="@color/text_dark"
+                android:textColor="@color/text_high_emphasis"
                 app:icon="@android:drawable/ic_menu_manage"
-                app:iconTint="@color/primary_blue" />
+                app:iconTint="@color/electric_blue" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#EEEEEE" />
+                android:background="#22FFFFFF" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnIntro"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="start|center_vertical"
+                android:text="How PayBhama Works (Intro)"
+                android:textColor="@color/text_high_emphasis"
+                app:icon="@android:drawable/ic_menu_info_details"
+                app:iconTint="@color/accent_emerald" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#22FFFFFF" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
@@ -100,3 +117,4 @@
     </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

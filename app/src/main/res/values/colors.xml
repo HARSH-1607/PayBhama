@@ -1,19 +1,28 @@
 <resources>
-    <color name="primary_blue">#0047AB</color> <!-- Jodhpur Indigo -->
-    <color name="primary_purple">#663399</color>
-    <color name="rajasthan_saffron">#FF9933</color>
-    <color name="jaipur_pink">#F4C2C2</color>
+    <!-- Modern Premium Palette -->
+    <color name="primary_deep">#1A1B2E</color>
+    <color name="accent_emerald">#00E676</color>
+    <color name="electric_blue">#3D5AFE</color>
     
-    <color name="bg_light">#FDF6F0</color> <!-- Warm Sand Background -->
+    <!-- Rajasthan Heritage Accents (Modernized) -->
+    <color name="rajasthan_saffron">#FF9933</color>
+    <color name="jaipur_pink">#FF8DA1</color>
+    <color name="jodhpur_indigo">#2C3E50</color>
+    
+    <!-- Functional Colors -->
+    <color name="bg_dark">#0C0C0C</color>
+    <color name="surface_dark">#1E1E1E</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
     
     <!-- Category Colors -->
-    <color name="coral_exp">#FF8D8D</color>
-    <color name="teal_exp">#4CD0C2</color>
-    <color name="mustard_exp">#FFC56D</color>
-    <color name="magenta_exp">#FF60B2</color>
+    <color name="shopping_blue">#3498DB</color>
+    <color name="travel_yellow">#F1C40F</color>
+    <color name="food_orange">#E67E22</color>
+    <color name="bills_red">#E74C3C</color>
     
-    <color name="text_dark">#1A1D1F</color>
-    <color name="text_grey">#9A9FA5</color>
-    <color name="black">#FF000000</color>
+    <color name="text_high_emphasis">#FFFFFF</color>
+    <color name="text_medium_emphasis">#B0B0B0</color>
+    <color name="text_disabled">#4A4A4A</color>
 </resources>
+

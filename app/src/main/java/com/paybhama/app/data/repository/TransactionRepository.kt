@@ -100,4 +100,40 @@ class TransactionRepository {
             Result.failure(e)
         }
     }
+
+    suspend fun addMoney(userId: String, amount: Double): Result<Transaction> {
+        return try {
+            if (amount <= 0) throw Exception("Amount must be greater than zero")
+
+            val transactionId = UUID.randomUUID().toString()
+            val timestamp = System.currentTimeMillis()
+
+            val transaction = Transaction(
+                id = transactionId,
+                senderId = "TOPUP",
+                receiverId = userId,
+                amount = amount,
+                timestamp = timestamp,
+                status = "COMPLETED"
+            )
+
+            db.runTransaction { firestoreTransaction ->
+                val userRef = db.collection("users").document(userId)
+                val snapshot = firestoreTransaction.get(userRef)
+                
+                if (!snapshot.exists()) throw Exception("User account does not exist")
+                
+                val currentBalance = snapshot.getDouble("balance") ?: 0.0
+                firestoreTransaction.update(userRef, "balance", currentBalance + amount)
+                
+                val transactionRef = db.collection("transactions").document(transactionId)
+                firestoreTransaction.set(transactionRef, transaction)
+            }.await()
+
+            Result.success(transaction)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Result.failure(e)
+        }
+    }
 }

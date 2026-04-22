@@ -29,7 +29,33 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_dashboard_to_billPayment"
+            app:destination="@id/billPaymentFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_dashboard_to_addMoney"
+            app:destination="@id/addMoneyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_dashboard_to_scanPay"
+            app:destination="@id/scanPayFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+    
+    <fragment
+        android:id="@+id/billPaymentFragment"
+        android:name="com.paybhama.app.ui.services.BillPaymentFragment"
+        android:label="Bill Payment" />
     
     <fragment
         android:id="@+id/sendMoneyFragment"
@@ -45,4 +71,15 @@
         android:id="@+id/profileFragment"
         android:name="com.paybhama.app.ui.profile.ProfileFragment"
         android:label="Profile" />
+
+    <fragment
+        android:id="@+id/addMoneyFragment"
+        android:name="com.paybhama.app.ui.wallet.AddMoneyFragment"
+        android:label="Add Money" />
+
+    <fragment
+        android:id="@+id/scanPayFragment"
+        android:name="com.paybhama.app.ui.scanner.ScanPayFragment"
+        android:label="Scan to Pay" />
 </navigation>
+

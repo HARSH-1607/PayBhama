@@ -45,7 +45,7 @@ class OnboardingActivity : AppCompatActivity() {
     private fun finishOnboarding() {
         // Save flag to skip onboarding in the future
         val prefs = getSharedPreferences("paybhama_prefs", MODE_PRIVATE)
-        prefs.edit().putBoolean("onboarding_completed", true).apply()
+        prefs.edit().putBoolean("onboarding_completed_v2", true).apply()
         
         startActivity(Intent(this, LoginActivity::class.java))
         finish()

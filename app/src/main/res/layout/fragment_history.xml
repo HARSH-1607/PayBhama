@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_light">
+    android:background="@color/bg_dark">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -46,13 +46,14 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvExpensesLabel"
-                tools:text="$1063.63" />
+                tools:text="₹ 1,063.63" />
 
-            <!-- Main White Panel (Curved Top) -->
+            <!-- Main Dark Panel (Curved Top) -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
+                app:cardBackgroundColor="@color/bg_dark"
                 app:cardCornerRadius="48dp"
                 app:cardElevation="0dp"
                 app:layout_constraintTop_toBottomOf="@+id/tvExpensesAmount">
@@ -68,7 +69,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Track your expenses"
-                        android:textColor="@color/text_dark"
+                        android:textColor="@color/text_high_emphasis"
                         android:textSize="22sp"
                         android:textStyle="bold" />
 
@@ -85,13 +86,13 @@
                             android:layout_height="120dp"
                             android:layout_columnWeight="1"
                             android:layout_margin="8dp"
-                            app:cardBackgroundColor="@color/coral_exp"
+                            app:cardBackgroundColor="@color/bills_red"
                             app:cardCornerRadius="24dp">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="16dp"
-                                android:text="Travel\n$113"
+                                android:text="Travel\n₹113"
                                 android:textColor="@color/white"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
@@ -102,14 +103,14 @@
                             android:layout_height="120dp"
                             android:layout_columnWeight="1"
                             android:layout_margin="8dp"
-                            app:cardBackgroundColor="@color/mustard_exp"
+                            app:cardBackgroundColor="@color/travel_yellow"
                             app:cardCornerRadius="24dp">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="16dp"
-                                android:text="Shopping\n$720"
-                                android:textColor="@color/white"
+                                android:text="Shopping\n₹720"
+                                android:textColor="@color/black"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
                         </com.google.android.material.card.MaterialCardView>
@@ -133,7 +134,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="32dp"
                         android:text="No transactions found."
-                        android:textColor="@color/text_grey"
+                        android:textColor="@color/text_medium_emphasis"
                         android:textSize="18sp"
                         android:visibility="gone" />
 
@@ -147,6 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="200dp"
                 android:visibility="gone"
+                android:indeterminateTint="@color/accent_emerald"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvExpensesAmount" />
@@ -155,3 +157,4 @@
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_margin">16dp</dimen>
+    <dimen name="header_padding">24dp</dimen>
+    <dimen name="card_corner_radius">20dp</dimen>
+    <dimen name="dashboard_header_height">250dp</dimen>
+</resources>

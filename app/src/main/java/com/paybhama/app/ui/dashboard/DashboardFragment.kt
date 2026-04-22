@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -28,20 +29,51 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         
         viewModel.user.observe(viewLifecycleOwner) { user ->
-            binding.tvBalance.text = "₹${user.balance}"
+            binding.tvBalance.text = "₹${"%,.2f".format(user.balance)}"
             binding.tvWelcome.text = "Namaste, ${user.name}"
         }
 
-        binding.btnSendMoney.setOnClickListener {
+        // Quick Actions
+        binding.btnSend.setOnClickListener {
             findNavController().navigate(R.id.action_dashboard_to_sendMoney)
         }
         
-        binding.btnHistory.setOnClickListener {
+        binding.btnHistoryAction.setOnClickListener {
             findNavController().navigate(R.id.historyFragment)
         }
 
-        binding.ivProfile.setOnClickListener {
-            findNavController().navigate(R.id.action_dashboard_to_profile)
+        binding.btnBills?.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboard_to_billPayment)
+        }
+
+        binding.btnRewards?.setOnClickListener {
+            Toast.makeText(requireContext(), "Bhama Rewards coming soon!", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.btnGridAddMoney.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboard_to_addMoney)
+        }
+
+        binding.btnGridScan.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboard_to_scanPay)
+        }
+
+        // Top Bar
+        binding.btnProfile.setOnClickListener {
+            findNavController().navigate(R.id.profileFragment)
+        }
+
+        binding.btnNotifications.setOnClickListener {
+            Toast.makeText(requireContext(), "No new notifications", Toast.LENGTH_SHORT).show()
+        }
+
+        // Fab Scanner
+        binding.fabScanner.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboard_to_scanPay)
+        }
+        
+        binding.btnAddMoney.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboard_to_addMoney)
         }
     }
 
@@ -50,3 +82,4 @@ class DashboardFragment : Fragment() {
         _binding = null
     }
 }
+

@@ -35,6 +35,11 @@ class ProfileFragment : Fragment() {
             binding.tvProfileEmail.text = user.email
         }
 
+        binding.btnIntro.setOnClickListener {
+            val intent = Intent(requireContext(), com.paybhama.app.ui.onboarding.OnboardingActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnLogout.setOnClickListener {
             authRepository.logout()
             val intent = Intent(requireContext(), LoginActivity::class.java)
